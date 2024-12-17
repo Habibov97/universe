@@ -38,15 +38,18 @@ const technologyImages = {
 };
 
 function TechnologyImg({ data, animateImg }) {
-  const { name } = data || {}; // Name determines the image source
-  const imgSrc = name ? technologyImages[name] : null;
 
   return (
-    <div>
-      <div className={`technology-img ${animateImg ? 'actives' : ''}`}>
-        {imgSrc ? <img src={imgSrc} alt={name} /> : <p>No image available</p>}
-      </div>
-    </div>
+
+    <>
+      {filteredData?.map((item, i) => (
+        <div key={i}>
+          <div className={`technology-img ${animateImg ? 'actives' : ''}`}>
+            <img src={technologyImages[item.name]} alt={item.name} />
+          </div>
+        </div>
+      ))}
+    </>
   );
 }
 

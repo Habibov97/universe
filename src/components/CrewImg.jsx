@@ -14,7 +14,6 @@
 
 // export default CrewImg;
 
-
 import React from 'react';
 
 // Explicitly import crew images
@@ -32,15 +31,18 @@ const crewImages = {
 };
 
 function CrewImg({ filteredData = {}, animateImg }) {
-  const { name } = filteredData || {}; // Name determines the image source
-  const imgSrc = name ? crewImages[name] : null;
+
 
   return (
-    <div>
-      <div className={`crew-img ${animateImg ? 'actives' : ''}`}>
-        {imgSrc ? <img src={imgSrc} alt={name} /> : <p>No image available</p>}
-      </div>
-    </div>
+    <>
+      {filteredData?.map((item, i) => (
+        <div key={i}>
+          <div className={`crew-img ${animateImg ? 'actives' : ''}`}>
+            <img src={crewImages[item.name]} alt={item.name} />
+          </div>
+        </div>
+      ))}
+    </>
   );
 }
 
