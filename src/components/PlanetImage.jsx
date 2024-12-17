@@ -30,6 +30,8 @@ const planetImages = {
 };
 
 function PlanetImage({ filteredData = [], animateImg }) {
+    console.log(filteredData);
+    
     return (
         <>
             {filteredData?.map((item, i) => (

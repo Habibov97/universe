@@ -41,7 +41,8 @@ function CrewWrapper() {
 
   }, [crewMember])
 
-  
+  console.log(filteredData);
+    
   return (
     <div>
         <div className='choose-destination'>

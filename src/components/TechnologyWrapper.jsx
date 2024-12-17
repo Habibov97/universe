@@ -13,9 +13,11 @@ function TechnologyWrapper() {
     const [animateImg, setAnimateImg] = useState(false)
     const [initialDeactive, setInitialDeactive] = useState(false)
 
-    const {technology} = data
+    const { technology } = data
+
     const rawData = tecnologyTitle ? technology && technology.find((item)=> item.name === tecnologyTitle) : tecnologyTitle;
 
+    
     useEffect(()=> {
         if(initialDeactive){
             setAnimate(true)
@@ -40,8 +42,7 @@ function TechnologyWrapper() {
         }
 
     }, [tecnologyTitle])
-
-
+    
 
   return (
     <div>
@@ -53,7 +54,7 @@ function TechnologyWrapper() {
                 <TechnologyWords animate={animate}  data={filteredData ? filteredData : rawData}/>
                 <TechnologyButtons technology={technology} setTechnologyTitle={setTechnologyTitle}/>
             </div>
-            <TechnologyImg animateImg={animateImg} data={filteredData ? filteredData : rawData}/>
+            <TechnologyImg filteredData={filteredData} animateImg={animateImg} />
         </div>
     </div>
   )
