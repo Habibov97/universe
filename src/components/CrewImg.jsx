@@ -30,7 +30,7 @@ const crewImages = {
   'Victor Glover': VictorImg,
 };
 
-function CrewImg({ filteredData = {}, animateImg }) {
+function CrewImg({ filteredData = [], animateImg }) {
 
 
   return (

@@ -37,7 +37,7 @@ const technologyImages = {
   'Spaceport': SpaceportPortrait,
 };
 
-function TechnologyImg({ data, animateImg }) {
+function TechnologyImg({ filteredData = [], animateImg }) {
 
   return (
 
