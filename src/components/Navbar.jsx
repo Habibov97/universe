@@ -1,7 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import { FaBars, FaX } from "react-icons/fa6";
-
+import Logo from '/src/assetler/img/logo.png';
 
 function Navbar() {
 
@@ -10,7 +10,7 @@ function Navbar() {
   return (
     <div className="navbar">
           <div onClick={()=> navigate('/')} className="logo">
-            <img  src="./src/assetler/img/logo.png" alt="Logo" />
+            <img  src={Logo} alt="Logo" />
           </div>
           <div className="nav-right">
             <div>
